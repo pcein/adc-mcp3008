@@ -47,7 +47,7 @@ impl<SPI, CS, E> Mcp3008<SPI, CS>
     }
 
     /// Read a MCP3008 ADC channel and return the 10 bit value as a u16
-    pub fn read_channel(&mut self, ch: Channel8) -> Result<u16, E> {
+    pub fn read_channel(&mut self, ch: Channels8) -> Result<u16, E> {
         self.cs.set_low();
 
         let mut buffer = [0u8; 3];
@@ -76,7 +76,7 @@ impl<SPI, CS, E> Mcp3004<SPI, CS>
     }
 
     /// Read a MCP3004 ADC channel and return the 10 bit value as a u16
-    pub fn read_channel(&mut self, ch: Channel4) -> Result<u16, E> {
+    pub fn read_channel(&mut self, ch: Channels4) -> Result<u16, E> {
         self.cs.set_low();
 
         let mut buffer = [0u8; 3];
@@ -95,7 +95,7 @@ impl<SPI, CS, E> Mcp3004<SPI, CS>
 /// Channel list for MCP3008
 #[derive(Clone, Copy)]
 #[allow(missing_docs)]
-pub enum Channel8 {
+pub enum Channels8 {
     CH0,
     CH1,
     CH2,
@@ -109,7 +109,7 @@ pub enum Channel8 {
 /// Channel list for MCP3004
 #[derive(Clone, Copy)]
 #[allow(missing_docs)]
-pub enum Channel4 {
+pub enum Channels4 {
     CH0,
     CH1,
     CH2,
