@@ -6,7 +6,7 @@ categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["embedded-hal-driver", "adc"]
 description = "Platform agnostic driver written using embedded-hal traits to interface with the MCP3008 / MCP3004 ADC's"
 documentation = "https://docs.rs/adc-mcp3008"
-license = "MIT or Apache-2.0"
+license = "MIT / Apache-2.0"
 repository = "https://github.com/pcein/adc-mcp3008"
 readme = "quickstart.md"
 
