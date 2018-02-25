@@ -1,6 +1,6 @@
 [package]
 name = "adc-mcp3008"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Pramode <mail@pramode.in>"]
 categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["embedded-hal-driver", "adc"]
