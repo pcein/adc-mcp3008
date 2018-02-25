@@ -9,7 +9,7 @@
 
 - [Example programs using this library](https://github.com/pcein/mcp3008-examples)
 
-- [Tutorial on writing embedded-hal based platform agnostic drivers](http://pramode.in)
+- [Tutorial on writing embedded-hal based platform agnostic drivers](http://pramode.in/2018/02/24/an-introduction-to-writing-embedded-hal-based-drivers-in-rust/)
 
 
 ## License
