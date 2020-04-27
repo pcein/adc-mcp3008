@@ -1,6 +1,6 @@
 [package]
 name = "adc-mcp3008"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Pramode <mail@pramode.in>"]
 categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["embedded-hal-driver", "adc"]
@@ -11,4 +11,4 @@ repository = "https://github.com/pcein/adc-mcp3008"
 readme = "quickstart.md"
 
 [dependencies]
-embedded-hal = "0.1.0"
+embedded-hal = "0.2.3"
