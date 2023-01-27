@@ -14,7 +14,7 @@ extern crate embedded_hal as hal;
 
 use hal::blocking::spi::Transfer;
 use hal::spi::{Mode, Phase, Polarity};
-use hal::digital::OutputPin;
+use hal::digital::v2::OutputPin;
 
 /// SPI mode
 pub const MODE: Mode = Mode {
@@ -48,7 +48,7 @@ impl<SPI, CS, E> Mcp3008<SPI, CS>
 
     /// Read a MCP3008 ADC channel and return the 10 bit value as a u16
     pub fn read_channel(&mut self, ch: Channels8) -> Result<u16, E> {
-        self.cs.set_low();
+        let _ = self.cs.set_low();
 
         let mut buffer = [0u8; 3];
         buffer[0] = 1;
@@ -56,7 +56,7 @@ impl<SPI, CS, E> Mcp3008<SPI, CS>
 
         self.spi.transfer(&mut buffer)?;
 
-        self.cs.set_high();
+        let _ = self.cs.set_high();
 
         let r = (((buffer[1] as u16) << 8) | (buffer[2] as u16)) & 0x3ff;
         Ok(r)
@@ -77,7 +77,7 @@ impl<SPI, CS, E> Mcp3004<SPI, CS>
 
     /// Read a MCP3004 ADC channel and return the 10 bit value as a u16
     pub fn read_channel(&mut self, ch: Channels4) -> Result<u16, E> {
-        self.cs.set_low();
+        let _ = self.cs.set_low();
 
         let mut buffer = [0u8; 3];
         buffer[0] = 1;
@@ -85,7 +85,7 @@ impl<SPI, CS, E> Mcp3004<SPI, CS>
 
         self.spi.transfer(&mut buffer)?;
 
-        self.cs.set_high();
+        let _ = self.cs.set_high();
 
         let r = (((buffer[1] as u16) << 8) | (buffer[2] as u16)) & 0x3ff;
         Ok(r)

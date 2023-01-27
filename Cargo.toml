@@ -11,4 +11,4 @@ repository = "https://github.com/pcein/adc-mcp3008"
 readme = "quickstart.md"
 
 [dependencies]
-embedded-hal = "0.1.0"
+embedded-hal = "0.2.7"
